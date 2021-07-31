@@ -1,5 +1,6 @@
 import React from 'react'
 import axios from 'axios';
+import './Main.css';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
@@ -53,8 +54,8 @@ class Main extends React.Component {
   render() {
     console.log(this.state.city);
     return(
-      <>
-        <h1>In the main guy</h1>
+      <div id="main">
+        <h1>Welcome to City Explorer, search to your heart's content!</h1>
         <Container>
           <Form onSubmit={this.handleSubmitCity}>
             <Form.Group>
@@ -70,7 +71,7 @@ class Main extends React.Component {
           {this.state.showLon ? <h2>Lon: {this.state.lon}</h2>: ''}
           {this.state.displayMap ? <img src={`https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_LOCATIONIQ_APIKEY}&center=${this.state.lat},${this.state.lon}&zoom=13`} alt={this.state.city} />: ''}
         </Container>
-      </>
+      </div>
 
     )
   }
