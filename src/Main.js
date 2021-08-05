@@ -13,10 +13,9 @@ class Main extends React.Component {
       lat: 0,
       lon: 0,
       showCityName: false,
-      showLat: false,
-      showLon: false,
       displayMap: false,
-
+      displayError: false,
+      errorMsg: '',
     }
   }
 
@@ -38,12 +37,15 @@ class Main extends React.Component {
         city: cityMap.data[0].display_name,
         lat: cityMap.data[0].lat,
         lon: cityMap.data[0].lon,
-        showLat: true,
-        showLon: true,
         displayMap: true,
       })
     }
     catch (error) {
+      this.setState({
+        displayError: true,
+        errorMsg: `Error Present: ${error.response.status}, ${error.response.data.error}`
+
+      })
       console.log('this error', error.message);
     }
   }
@@ -54,9 +56,9 @@ class Main extends React.Component {
   render() {
     console.log(this.state.city);
     return(
-      <div id="main">
+      <div>
         <h1>Welcome to City Explorer, search to your heart's content!</h1>
-        <Container>
+        <Container id="container1">
           <Form onSubmit={this.handleSubmitCity}>
             <Form.Group>
               <Form.Label>
@@ -64,12 +66,13 @@ class Main extends React.Component {
                 </Form.Control>
               </Form.Label>
             </Form.Group>
-            <Button variant="outline-success" type="submit">Expore!</Button>
+            <Button id="explore" variant="secondary" block type="submit">Explore!</Button>{' '}
           </Form>
-          {this.state.showCityName ? <h2>City Name: {this.state.city}</h2>: ''}
-          {this.state.showLat ? <h2>Lat: {this.state.lat}</h2>: ''}
-          {this.state.showLon ? <h2>Lon: {this.state.lon}</h2>: ''}
-          {this.state.displayMap ? <img src={`https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_LOCATIONIQ_APIKEY}&center=${this.state.lat},${this.state.lon}&zoom=13`} alt={this.state.city} />: ''}
+          {this.state.showCityName ? <h2>City Name: {this.state.city}</h2> : ''}
+          {this.state.lat ? <h2>Lat: {this.state.lat}</h2> : ''}
+          {this.state.lon ? <h2>Lon: {this.state.lon}</h2> : ''}
+          {this.state.displayMap ? <img src={`https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_LOCATIONIQ_APIKEY}&center=${this.state.lat},${this.state.lon}&zoom=13`} alt={this.state.city} /> : ''}
+          {this.state.errorMsg ? <h2>{this.state.errorMsg}</h2> : ''}
         </Container>
       </div>
 
