@@ -1,0 +1,24 @@
+* {
+  background: linear-gradient (to right, #03001e, #7303c0, #ec38bc, #fdeff9);
+  text-align: center;
+}
+
+h2 {
+  color: rgb(118, 121, 61);
+}
+
+h1 {
+  color: azure;
+}
+
+#main {
+  background: rgb(182, 151, 208);
+}
+
+#explore {
+  color: aquamarine;
+}
+
+#container1 {
+  color: brown;
+}

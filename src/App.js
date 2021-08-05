@@ -1,10 +1,14 @@
 import React from 'react'
+import Main from './Main';
 import './App.css';
+
+
 
 class App extends React.Component {
   render() {
     return (
-      <h1>here's life</h1>
+      <Main />
+
     )
   }
 }
