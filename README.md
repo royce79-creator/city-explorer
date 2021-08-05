@@ -9,12 +9,11 @@ This application will allow people to get a look at the city in certain segments
 1. You will want to make 
 
 ## Architecture
-- When getting this started and working I would say that I was using a lot of the 
+- When getting this started and working I would say that I was using tools ike location IQ, React, Vscode, github, as well as axios.
 
 ## Change Log
-<!-- Use this area to document the iterative changes made to your application as each feature is successfully implemented. Use time stamps. Here's an example:
-
-01-01-2001 4:59pm - Application now has a fully-functional express server, with a GET route for the location resource. -->
+**07/31/21** Made changes to the site to have the API called from location IQ.
+**08/02/21** Finished changes with CSS and getting the error to render on the page when no input is placed in the form.
 
 ## Credit and Collaborations
 Assistance from --> Alex and Charlie, Heather

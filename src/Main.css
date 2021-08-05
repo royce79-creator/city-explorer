@@ -1,6 +1,6 @@
 * {
-  background: linear-gradient (to right, #03001e, #7303c0, #ec38bc, #fdeff9);
-  text-align: center;
+  background: linear-gradient (to right, #073395, #090979, #073395, #00d4ff);
+  text-align: center; 
 }
 
 h2 {
@@ -8,11 +8,11 @@ h2 {
 }
 
 h1 {
-  color: azure;
+  color: darkblue;
 }
 
 #main {
-  background: rgb(182, 151, 208);
+  background: darkblue;
 }
 
 #explore {
