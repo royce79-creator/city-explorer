@@ -67,7 +67,7 @@ class Main extends React.Component {
       catch (error) {
         this.setState({
           displayError: true,
-          errorMsg: `Error has occured: ${error.response.status}, ${error.response.data.error}`
+          errorMsg: `Error has occured: ${error.response.status}, ${error.response.data.error ? error.response.data.error : ''}`
         })
         console.log('this error 2', error.message);
       }
